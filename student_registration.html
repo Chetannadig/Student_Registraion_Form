@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Registration System - Register, manage and track student information easily">
+    <meta name="keywords" content="student, registration, management, education">
+    <meta name="author" content="Student Developer">
+    <title>Student Registration System - Manage Student Records</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>🎓 Student Registration System</h1>
+        <p>Easily register, manage, and track student information with our comprehensive registration system. Add, edit, and delete student records with real-time validation.</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Success/Error Messages -->
+        <div id="messageContainer"></div>
+
+        <div class="main-content">
+            <!-- Registration Form Section -->
+            <section class="form-section">
+                <div class="card">
+                    <h2 class="form-title" id="formTitle">📝 Register New Student</h2>
+                    
+                    <form id="studentForm" novalidate>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="studentName" class="form-label">Student Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="studentName" 
+                                    name="studentName" 
+                                    class="form-input"
+                                    placeholder="Enter full name"
+                                    required
+                                    aria-describedby="studentName-error"
+                                >
+                                <div id="studentName-error" class="error-message"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="studentId" class="form-label">Student ID *</label>
+                                <input 
+                                    type="text" 
+                                    id="studentId" 
+                                    name="studentId" 
+                                    class="form-input"
+                                    placeholder="Enter student ID (numbers only)"
+                                    required
+                                    aria-describedby="studentId-error"
+                                >
+                                <div id="studentId-error" class="error-message"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emailId" class="form-label">Email Address *</label>
+                                <input 
+                                    type="email" 
+                                    id="emailId" 
+                                    name="emailId" 
+                                    class="form-input"
+                                    placeholder="Enter email address"
+                                    required
+                                    aria-describedby="emailId-error"
+                                >
+                                <div id="emailId-error" class="error-message"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactNumber" class="form-label">Contact Number *</label>
+                                <input 
+                                    type="tel" 
+                                    id="contactNumber" 
+                                    name="contactNumber" 
+                                    class="form-input"
+                                    placeholder="Enter 10-digit contact number"
+                                    required
+                                    aria-describedby="contactNumber-error"
+                                >
+                                <div id="contactNumber-error" class="error-message"></div>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <button type="submit" class="btn btn-primary" id="submitBtn">
+                                    <span id="submitText">Register Student</span>
+                                    <span id="submitLoading" class="loading" style="display: none;"></span>
+                                </button>
+                                <button type="button" class="btn btn-danger" id="cancelBtn" style="display: none; margin-left: 1rem;">
+                                    Cancel Edit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Display Section -->
+            <section class="display-section">
+                <div class="card">
+                    <h2 class="section-title">📊 Registered Students</h2>
+                    
+                    <div id="recordsContainer">
+                        <div class="records-container">
+                            <table class="records-table" id="studentsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Student ID</th>
+                                        <th>Email</th>
+                                        <th>Contact</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="studentsTableBody">
+                                    <!-- Student records will be inserted here -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Empty State -->
+                        <div id="emptyState" class="empty-state">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">📚</div>
+                            <h3>No Students Registered Yet</h3>
+                            <p>Start by registering your first student using the form above.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
