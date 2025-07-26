@@ -273,7 +273,7 @@
                     this.saveStudentsToStorage();
                     this.renderStudents();
                     this.resetForm();
-                    this.showMessage('Student information updated successfully! ✅', 'success');
+                    this.showMessage('Student information updated successfully! ', 'success');
                 }
             }
 
@@ -317,7 +317,7 @@
             cancelEdit() {
                 this.currentEditId = null;
                 this.resetForm();
-                document.getElementById('formTitle').textContent = '📝 Register New Student';
+                document.getElementById('formTitle').textContent = ' Register New Student';
                 document.getElementById('submitText').textContent = 'Register Student';
                 document.getElementById('cancelBtn').style.display = 'none';
             }
